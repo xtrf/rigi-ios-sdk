@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		365780492D4514F000B38600 /* rigi.ini in Resources */ = {isa = PBXBuildFile; fileRef = 36BA50BE2D428CF800D903E4 /* rigi.ini */; };
 		3657804A2D45160300B38600 /* rigi.meta in Resources */ = {isa = PBXBuildFile; fileRef = 36BA50BF2D428CF800D903E4 /* rigi.meta */; };
-		367286A42D453B0300DF51F7 /* RigiSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 367286A32D453B0300DF51F7 /* RigiSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +31,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				367286A42D453B0300DF51F7 /* RigiSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +84,6 @@
 			);
 			name = RigiExample;
 			packageProductDependencies = (
-				367286A32D453B0300DF51F7 /* RigiSDK */,
 			);
 			productName = RigiExample;
 			productReference = 36BA508D2D42858500D903E4 /* RigiExample.app */;
@@ -119,7 +116,7 @@
 			mainGroup = 36BA50842D42858500D903E4;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				367286A22D453B0300DF51F7 /* XCRemoteSwiftPackageReference "rigi-ios-spm" */,
+				3661CF932D45409700B75E1C /* XCRemoteSwiftPackageReference "rigi-ios-spm" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 36BA508E2D42858500D903E4 /* Products */;
@@ -353,7 +350,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		367286A22D453B0300DF51F7 /* XCRemoteSwiftPackageReference "rigi-ios-spm" */ = {
+		3661CF932D45409700B75E1C /* XCRemoteSwiftPackageReference "rigi-ios-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/xtrf/rigi-ios-spm";
 			requirement = {
@@ -362,14 +359,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		367286A32D453B0300DF51F7 /* RigiSDK */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 367286A22D453B0300DF51F7 /* XCRemoteSwiftPackageReference "rigi-ios-spm" */;
-			productName = RigiSDK;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 36BA50852D42858500D903E4 /* Project object */;
 }
