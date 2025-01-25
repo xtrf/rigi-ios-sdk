@@ -1,0 +1,15 @@
+{
+  "originHash" : "083a260d06551e259130681a563f513aeb79a9c3881eeac75b39f52def3e1e35",
+  "pins" : [
+    {
+      "identity" : "rigi-ios-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/xtrf/rigi-ios-spm",
+      "state" : {
+        "revision" : "b6f03f4e13984f97c6f2711107eb04801d6d749d",
+        "version" : "0.9.4"
+      }
+    }
+  ],
+  "version" : 3
+}
