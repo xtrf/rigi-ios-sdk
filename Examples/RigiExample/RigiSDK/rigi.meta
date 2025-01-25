@@ -1,0 +1,74 @@
+{
+  "RigiExample\/Localizable.xcstrings\/Here is some more text to display." : {
+    "source" : "Here is some more text to display.",
+    "fileOriginal" : "RigiExample\/Localizable.xcstrings",
+    "tokenisedString" : "⁪⁪⁪‌​‍‌‌‌‌​​‌​‌​‌‍‌​‌‍​‌​‍‌‌​‌‌‌​‌‍​‍​​‍‌​‌‌⁪Here is some more text to display.⁪⁪",
+    "signature" : "15527156184127097680",
+    "scannableString" : "[# Here is some more text to display. #]",
+    "unitId" : "Here is some more text to display.",
+    "stringId" : "RigiExample\/Localizable.xcstrings\/Here is some more text to display."
+  },
+  "RigiExample\/Localizable.xcstrings\/Go to Second Screen" : {
+    "unitId" : "Go to Second Screen",
+    "scannableString" : "[# Go to Second Screen #]",
+    "source" : "Go to Second Screen",
+    "fileOriginal" : "RigiExample\/Localizable.xcstrings",
+    "tokenisedString" : "⁪⁪⁪‌‌‌​‌​‌‌‌‍‌‌‌‍‌‌‌​‍‌​​‌​‌‌‌‌‍‌​‍‍‍‌‌‌‍‌​​⁪Go to Second Screen⁪⁪",
+    "signature" : "17736807969049360662",
+    "stringId" : "RigiExample\/Localizable.xcstrings\/Go to Second Screen"
+  },
+  "RigiExample\/Localizable.xcstrings\/What a beautiful day it is! :)" : {
+    "source" : "What a beautiful day it is! :)",
+    "tokenisedString" : "⁪⁪⁪‌‍‍​‍​‍‌​‍‍‍‍​‌​‍‌‌​‌‍​‌‌​‌‍‌‌‍​‌​‍‌‌‌‌‌⁪What a beautiful day it is! :)⁪⁪",
+    "signature" : "7768471758879529975",
+    "stringId" : "RigiExample\/Localizable.xcstrings\/What a beautiful day it is! :)",
+    "fileOriginal" : "RigiExample\/Localizable.xcstrings",
+    "unitId" : "What a beautiful day it is! :)",
+    "scannableString" : "[# What a beautiful day it is! :) #]"
+  },
+  "RigiExample\/Localizable.xcstrings\/Home" : {
+    "fileOriginal" : "RigiExample\/Localizable.xcstrings",
+    "source" : "Home",
+    "tokenisedString" : "⁪⁪⁪‌‌‌​​‍‌​‍‌‍‍​​‍‌​‍​​​‍​‌​‌​‌‌‍‍‌‍​‌‌​‍​⁪Home⁪⁪",
+    "stringId" : "RigiExample\/Localizable.xcstrings\/Home",
+    "signature" : "1964743497801859731",
+    "unitId" : "Home",
+    "scannableString" : "[# Home #]"
+  },
+  "RigiExample\/Localizable.xcstrings\/Enjoy your time here :)" : {
+    "scannableString" : "[# Enjoy your time here :) #]",
+    "signature" : "15308763920175654748",
+    "source" : "Enjoy your time here :)",
+    "stringId" : "RigiExample\/Localizable.xcstrings\/Enjoy your time here :)",
+    "fileOriginal" : "RigiExample\/Localizable.xcstrings",
+    "unitId" : "Enjoy your time here :)",
+    "tokenisedString" : "⁪⁪⁪‌​‍​‍‍‍‍‍‌‌‍​​‌​‍‍​‌‍‍​​​‌​‍​‌‌​‌‌‍​​‌‍​‌⁪Enjoy your time here :)⁪⁪"
+  },
+  "RigiExample\/Localizable.xcstrings\/Welcome to the second screen!" : {
+    "unitId" : "Welcome to the second screen!",
+    "source" : "Welcome to the second screen!",
+    "tokenisedString" : "⁪⁪⁪‍‍‍‌​‍‌‌‌​​‍‍​‌​‌​‍‍‍‍‌‍‌​‌​‍​‌‌‌​‌​‍‌‍‌⁪Welcome to the second screen!⁪⁪",
+    "scannableString" : "[# Welcome to the second screen! #]",
+    "fileOriginal" : "RigiExample\/Localizable.xcstrings",
+    "signature" : "11898922283450822167",
+    "stringId" : "RigiExample\/Localizable.xcstrings\/Welcome to the second screen!"
+  },
+  "RigiExample\/Localizable.xcstrings\/Hello, world!" : {
+    "unitId" : "Hello, world!",
+    "signature" : "11311271838232114464",
+    "tokenisedString" : "⁪⁪⁪‍‍‌​‌​​‍​‍​‌​​‍​‍‍​​​‍​​‌‌‍‌‍‌‌‌‍​​‌​​​​⁪Hello, world!⁪⁪",
+    "scannableString" : "[# Hello, world! #]",
+    "stringId" : "RigiExample\/Localizable.xcstrings\/Hello, world!",
+    "fileOriginal" : "RigiExample\/Localizable.xcstrings",
+    "source" : "Hello, world!"
+  },
+  "RigiExample\/RigiExample-InfoPlist.xcstrings\/CFBundleName" : {
+    "unitId" : "CFBundleName",
+    "stringId" : "RigiExample\/RigiExample-InfoPlist.xcstrings\/CFBundleName",
+    "fileOriginal" : "RigiExample\/RigiExample-InfoPlist.xcstrings",
+    "scannableString" : "[# RigiExample #]",
+    "source" : "RigiExample",
+    "tokenisedString" : "⁪⁪⁪‌‍‌​‌‍​‌​​‍‍​​​​‍‌‍‍‍‌​​‌‍‍‌​​​‍​‍​​​‌‍​⁪RigiExample⁪⁪",
+    "signature" : "7289964687584067603"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Enjoy your time here :)" : {
+      "localizations" : {
+        "zu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "[# Enjoy your time here :) #]"
+          }
+        }
+      }
+    },
+    "Go to Second Screen" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ga naar het tweede scherm"
+          }
+        },
+        "zu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "[# Go to Second Screen #]"
+          }
+        }
+      }
+    },
+    "Hello, world!" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hallo wereld!"
+          }
+        },
+        "zu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "[# Hello, world! #]"
+          }
+        }
+      }
+    },
+    "Here is some more text to display." : {
+      "localizations" : {
+        "zu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "[# Here is some more text to display. #]"
+          }
+        }
+      }
+    },
+    "Home" : {
+      "localizations" : {
+        "zu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "[# Home #]"
+          }
+        }
+      }
+    },
+    "Welcome to the second screen!" : {
+      "localizations" : {
+        "zu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "[# Welcome to the second screen! #]"
+          }
+        }
+      }
+    },
+    "What a beautiful day it is! :)" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is het een mooie dag :)"
+          }
+        },
+        "zu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "[# What a beautiful day it is! :) #]"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

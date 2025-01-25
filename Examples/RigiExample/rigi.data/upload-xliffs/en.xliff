@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rigi="www.rigi.io" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd" rigi:projecturl="https://boxma5.rigi.io/projects/175">
+    <file original="RigiExample/Localizable.xcstrings" source-language="en" target-language="en" datatype="plaintext">
+        <header>
+            <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="16.2" build-num="16C5032a"></tool>
+        </header>
+        <body>
+            <trans-unit id="Enjoy your time here :)" xml:space="preserve" rigi:id="15308763920175654748" rigi:idstr="RigiExample/Localizable.xcstrings/Enjoy your time here :)">
+                <source>Enjoy your time here :)</source>
+                <target state="new">Enjoy your time here :)</target>
+                <note></note>
+            </trans-unit>
+            <trans-unit id="Go to Second Screen" xml:space="preserve" rigi:id="17736807969049360662" rigi:idstr="RigiExample/Localizable.xcstrings/Go to Second Screen">
+                <source>Go to Second Screen</source>
+                <target state="new">Go to Second Screen</target>
+                <note></note>
+            </trans-unit>
+            <trans-unit id="Hello, world!" xml:space="preserve" rigi:id="11311271838232114464" rigi:idstr="RigiExample/Localizable.xcstrings/Hello, world!">
+                <source>Hello, world!</source>
+                <target state="new">Hello, world!</target>
+                <note></note>
+            </trans-unit>
+            <trans-unit id="Here is some more text to display." xml:space="preserve" rigi:id="15527156184127097680" rigi:idstr="RigiExample/Localizable.xcstrings/Here is some more text to display.">
+                <source>Here is some more text to display.</source>
+                <target state="new">Here is some more text to display.</target>
+                <note></note>
+            </trans-unit>
+            <trans-unit id="Home" xml:space="preserve" rigi:id="1964743497801859731" rigi:idstr="RigiExample/Localizable.xcstrings/Home">
+                <source>Home</source>
+                <target state="new">Home</target>
+                <note></note>
+            </trans-unit>
+            <trans-unit id="Welcome to the second screen!" xml:space="preserve" rigi:id="11898922283450822167" rigi:idstr="RigiExample/Localizable.xcstrings/Welcome to the second screen!">
+                <source>Welcome to the second screen!</source>
+                <target state="new">Welcome to the second screen!</target>
+                <note></note>
+            </trans-unit>
+            <trans-unit id="What a beautiful day it is! :)" xml:space="preserve" rigi:id="7768471758879529975" rigi:idstr="RigiExample/Localizable.xcstrings/What a beautiful day it is! :)">
+                <source>What a beautiful day it is! :)</source>
+                <target state="new">What a beautiful day it is! :)</target>
+                <note></note>
+            </trans-unit>
+        </body>
+    </file>
+    <file original="RigiExample/RigiExample-InfoPlist.xcstrings" source-language="en" target-language="en" datatype="plaintext">
+        <header>
+            <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="16.2" build-num="16C5032a"></tool>
+        </header>
+        <body>
+            <trans-unit id="CFBundleName" xml:space="preserve" rigi:id="7289964687584067603" rigi:idstr="RigiExample/RigiExample-InfoPlist.xcstrings/CFBundleName">
+                <source>RigiExample</source>
+                <target state="new">RigiExample</target>
+                <note>Bundle name</note>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

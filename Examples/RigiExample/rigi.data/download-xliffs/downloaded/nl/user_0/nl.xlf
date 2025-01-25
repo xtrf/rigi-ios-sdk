@@ -1,0 +1,65 @@
+<xliff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd" xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2" xmlns:rigi="www.rigi.io" rigi:projecturl="https://boxma5.rigi.io/projects/175" rigi:version="5" rigi:signatureformat="3">
+  <file date="2025-01-25T14:14:48.520Z" original="Rigi.RigiExample" datatype="plaintext" source-language="en" target-language="nl">
+    <body>
+      <trans-unit id="15308763920175654748" rigi:id="15308763920175654748" rigi:idstr="RigiExample/Localizable.xcstrings/Enjoy your time here :)" resname="RigiExample/Localizable.xcstrings/Enjoy your time here :)">
+        <source>Enjoy your time here :)</source>
+        <context-group purpose="information">
+          <context context-type="x-rigi">https://boxma5.rigi.io/projects/175/context/signature/15308763920175654748?locale=nl</context>
+        </context-group>
+        <note from="rigi">https://boxma5.rigi.io/projects/175/context/signature/15308763920175654748?locale=nl</note>
+      </trans-unit>
+      <trans-unit id="17736807969049360662" rigi:id="17736807969049360662" rigi:idstr="RigiExample/Localizable.xcstrings/Go to Second Screen" resname="RigiExample/Localizable.xcstrings/Go to Second Screen">
+        <source>Go to Second Screen</source>
+        <target state="needs-review-translation">Ga naar het tweede scherm</target>
+        <context-group purpose="information">
+          <context context-type="x-rigi">https://boxma5.rigi.io/projects/175/context/signature/17736807969049360662?locale=nl</context>
+        </context-group>
+        <note from="rigi">https://boxma5.rigi.io/projects/175/context/signature/17736807969049360662?locale=nl</note>
+      </trans-unit>
+      <trans-unit id="11311271838232114464" rigi:id="11311271838232114464" rigi:idstr="RigiExample/Localizable.xcstrings/Hello, world!" resname="RigiExample/Localizable.xcstrings/Hello, world!">
+        <source>Hello, world!</source>
+        <target state="needs-review-translation">Hallo wereld!</target>
+        <context-group purpose="information">
+          <context context-type="x-rigi">https://boxma5.rigi.io/projects/175/context/signature/11311271838232114464?locale=nl</context>
+        </context-group>
+        <note from="rigi">https://boxma5.rigi.io/projects/175/context/signature/11311271838232114464?locale=nl</note>
+      </trans-unit>
+      <trans-unit id="15527156184127097680" rigi:id="15527156184127097680" rigi:idstr="RigiExample/Localizable.xcstrings/Here is some more text to display." resname="RigiExample/Localizable.xcstrings/Here is some more text to display.">
+        <source>Here is some more text to display.</source>
+        <context-group purpose="information">
+          <context context-type="x-rigi">https://boxma5.rigi.io/projects/175/context/signature/15527156184127097680?locale=nl</context>
+        </context-group>
+        <note from="rigi">https://boxma5.rigi.io/projects/175/context/signature/15527156184127097680?locale=nl</note>
+      </trans-unit>
+      <trans-unit id="1964743497801859731" rigi:id="1964743497801859731" rigi:idstr="RigiExample/Localizable.xcstrings/Home" resname="RigiExample/Localizable.xcstrings/Home">
+        <source>Home</source>
+        <context-group purpose="information">
+          <context context-type="x-rigi">https://boxma5.rigi.io/projects/175/context/signature/1964743497801859731?locale=nl</context>
+        </context-group>
+        <note from="rigi">https://boxma5.rigi.io/projects/175/context/signature/1964743497801859731?locale=nl</note>
+      </trans-unit>
+      <trans-unit id="11898922283450822167" rigi:id="11898922283450822167" rigi:idstr="RigiExample/Localizable.xcstrings/Welcome to the second screen!" resname="RigiExample/Localizable.xcstrings/Welcome to the second screen!">
+        <source>Welcome to the second screen!</source>
+        <context-group purpose="information">
+          <context context-type="x-rigi">https://boxma5.rigi.io/projects/175/context/signature/11898922283450822167?locale=nl</context>
+        </context-group>
+        <note from="rigi">https://boxma5.rigi.io/projects/175/context/signature/11898922283450822167?locale=nl</note>
+      </trans-unit>
+      <trans-unit id="7768471758879529975" rigi:id="7768471758879529975" rigi:idstr="RigiExample/Localizable.xcstrings/What a beautiful day it is! :)" resname="RigiExample/Localizable.xcstrings/What a beautiful day it is! :)">
+        <source>What a beautiful day it is! :)</source>
+        <target state="needs-review-translation">Wat is het een mooie dag :)</target>
+        <context-group purpose="information">
+          <context context-type="x-rigi">https://boxma5.rigi.io/projects/175/context/signature/7768471758879529975?locale=nl</context>
+        </context-group>
+        <note from="rigi">https://boxma5.rigi.io/projects/175/context/signature/7768471758879529975?locale=nl</note>
+      </trans-unit>
+      <trans-unit id="7289964687584067603" rigi:id="7289964687584067603" rigi:idstr="RigiExample/RigiExample-InfoPlist.xcstrings/CFBundleName" resname="RigiExample/RigiExample-InfoPlist.xcstrings/CFBundleName">
+        <source>RigiExample</source>
+        <context-group purpose="information">
+          <context context-type="x-rigi">https://boxma5.rigi.io/projects/175/context/signature/7289964687584067603?locale=nl</context>
+        </context-group>
+        <note from="Developer" annotates="source">Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
