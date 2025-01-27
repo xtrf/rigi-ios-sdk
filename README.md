@@ -32,7 +32,7 @@ This repository houses the Rigi iOS SDK framework and sample projects.
 - **RigiSDK** - Rigi commandline script and ini-file templates. 
 - **Examples** - Example apps.
 
-Find out more about the Rigi Software Localization Tool on [https://xtm.cloud/rigi/](https://xtm.cloud/rigi/)
+Find out more about the Rigi Software Localization Tool on [https://xtm.cloud/rigi/]()
 
 <br />
 
@@ -42,143 +42,124 @@ The minimum requirements for Rigi SDK for iOS are:
 
 - iOS 13 or MacOS 11
 - Swift 5.0+ / Objective-C
-- RigiSDK Package and commandline script
+- Xcode Swift Package Manager
+- Xcode Localization with String Catalogs
+- Rigi Swift Package and Rigi commandline script
 
 <br />
 
 ## Localize the project
 
-To make use of the Rigi SDK your need to enable localization in the Xcode project and add a special ***pseudo language***. This section describes how to setup basic localization in your project.
+To make use of the Rigi SDK your need to enable localization in your Xcode project and add a special ***pseudo language***. The RigiSDK supports Xcode string catalogs and the import and export of XLIFF localization files.
+
+This section describes how to setup basic localization in your project.
+
+More information about Localization in Xcode can be found on [https://developer.apple.com/documentation/xcode/localization]()
 
 ### Enable localization in Xcode
 
-Enable base localization in the Xcode project. 
-This will set Storyboards and Xibs as the base and will add additional string files for each extra language. 
+First enable localization in the Xcode project. 
 
 ### Add languages in Xcode
 
-Add your required languages to the Xcode project. In this example we choose ***Dutch (NL)***.
+Add the languages your app will support to the Xcode project. In this example we choose ***Dutch (NL)***.
+
+![](Docs/Screens/setup-3.png)
+
 
 You should also add a ***pseudo language*** that will only be used to capture screenshots and find translatable texts on the previews. 
 
-Here we will choose Zulu as a pseudo language. 
+Here we will choose Zulu (ZU) as a pseudo language. 
 
-![](Docs/Assets/localization.png)
+![](Docs/Screens/setup-4.png)
+
+<br/>
 
 
 ## Setup the Rigi SDK
 
-This section describes how to add the Rigi SDK to your Xcode project using ***cocoapods*** and how to configure the project and the Rigi SDK. 
+This section describes how to add the Rigi SDK to your Xcode project using ***Swift Package Manager*** and how to configure the project and the Rigi SDK. 
 
-### Create a Target and Scheme for Rigi builds
+### Create a new Target and Scheme for Rigi builds
 
 You can create a specific target and scheme for the Rigi builds that only will be used to capture previews. This keeps your production builds separated from the Rigi builds.
 
-In Xcode create (or copy) a new scheme and set the App language to the ***pseudo locale*** that will be used to capture the previews. 
+In Xcode create (or copy) a new target that will be used to capture the previews. In the related scheme set the App language to the ***pseudo locale***. 
 
-<img src="Docs/Assets/target-dupl.png" width="200">
+Here we create an new target 'RigiExample Rigi' and set its language to Zulu (ZU). 
 
-When the locale can not be selected from the dropdown add a new launch argument in the scheme
+![](Docs/Screens/spm-1.png)
 
-```code
--AppleLanguages "(ZU)"
-```
-
-
-![](Docs/Assets/scheme-edit4.png)
-
+![](Docs/Screens/spm-2.png)
 
 ### Add the Rigi SDK to Xcode
 
-The Rigi SDK for iOS can be installed through [`CocoaPods`](https://cocoapods.org/). This is the preferred way to add the SDK. Alternatively you can download the latest SDK framework and Rigi commandline tools and add them manually to your project.
+The Rigi SDK for iOS can be installed through [`Swift Package Manager`](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app). This is the preferred way to add the SDK. Alternatively you can download the Rigi SDK framework and add it manually to your project.
 
-Install cocoapods (if not already done). Open Terminal and run:
-
-```bash
-sudo gem install cocoapods
-```
-
-Setup cocoapods in your project (if not already done). Goto your project's root folder and run: 
+The Rigi SDK package can be installed from this repository
 
 ```bash
-pod init
-pod install
+https://github.com/xtrf/rigi-ios-spm
 ```
 
-This will setup cocoapods in the project. CocoaPods will create a new project_name.xcworkspace file, a new Podfile and a Pods folder.
+Add the Rigi SDK package to your project.
 
-Add the following lines to the top of the `Podfile`:
+![](Docs/Screens/spm-3.png)
 
-```bash
-source 'https://github.com/HenkBoxma/rigi-ios'
-source 'https://cdn.cocoapods.org/'
-```
-
-Add the Rigi pod. Optionally specify the version you want to use, like so:
-
-```bash
-pod 'Rigi', '~> 1.0'
-```
-
-Your Podfile will now look something like this:
-
-```bash
-platform :ios, '11.0'
-
-use_frameworks!
-
-source 'https://cdn.cocoapods.org/'
-source 'https://github.com/HenkBoxma/rigi-ios-pod.git'
-
-def shared_pods
-  # Add shared pods here
-end
-
-target 'RigiExample' do
-  shared_pods
-end
-
-target 'RigiExample Pseudo' do
-  shared_pods
-  pod 'Rigi'
-end
-```
-
-Once you update your Podfile you will need to run either `pod update` or `pod install --repo-update` to update your repos.
-
-Open the project_name.xcworkspace with Xcode.
+Add the package to the target that will be used to capture Rigi previews.<br/>
 <br/>
+<img src="Docs/Screens/spm-4.png" width="600">
+
 <br/>
 
 ### Enable Rigi in Xcode
 
-You can add a custom preprocessor flag to enable Rigi only for the Rigi build Target. Here we choose a flag called **RIGI_ENABLED**.
+The Rigi SDK supportes both UIKit and SwiftUI project. First we need to start Rigi when the app is launched.
 
-![Add Rigi preprocessor flag](Docs/Assets/build1.png)
-
-Now you can activate the Rigi SDK in the appDelegate. 
-
-![](Docs/Assets/app-del.png)
-
+For **UIKit projects** add the following code launch Rigi on startup.
 
 ```swift
 
-import UIKit
+import SwiftUI
 
-#if RIGI_ENABLED
-import Rigi
+#if canImport(RigiSDK)
+import RigiSDK
 #endif
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        #if RIGI_ENABLED
-        RigiSdk.shared.start()
+        ....
+        #if canImport(RigiSDK)
+        Rigi.start()
         #endif
-
         return true
+    }
+}
+
+```
+
+For **SwiftUI projects** add the following code.
+
+```swift
+
+import SwiftUI
+
+#if canImport(RigiSDK)
+import RigiSDK
+#endif
+
+@main
+struct RigiExampleApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .onAppear {
+                    #if canImport(RigiSDK)
+                    Rigi.start()
+                    #endif
+                }
+        }
     }
 }
 
@@ -188,65 +169,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 For most project the Rigi SDK will work fine out of the box. For specific needs the SDK has several options that can be customised. This section will give an overview of these options.
 
-The SDK settings are available on the global ***RigiSdk.shared.settings*** and can be customised as follows:
-
 ```swift
 
-	RigiSdk.shared.settings.addLabelBorders = true
-	RigiSdk.shared.settings.labelBorderColor = "#800000"
- 	RigiSdk.shared.start()
+  Rigi.start { setttings in
+      setttings.addLabelBorders = true
+      setttings.labelBorderColor = "#ff0000"
+  }
 
 ```
+
 The following configuration options are available:
 
 ```swift
 
-    // Enable (debug) logging
-    public var loggingEnabled = true
-
-    // Show the scan button
+    // Show the Rigi scan button
     public var isButtonVisible = true
 
-    // Add timestamps to the preview names
-    public var addFileTimestamps = true
+    // Enable (debug) logging
+    public var loggingEnabled = true
+    public var debugScanning = false
+    public var debugMatching = false
 
-    // Enable auto scanning when new view controllers are detected in the view hierarchy
-    public var enableAutoScanning = false
-    public var autoScanInterval: Double = 1 // Should be greater than the delay time below.
-    public var autoScanCaptureDelay: Double = 0.7
-
-    // This option will make sure only the upper view controller is scanned when multiple view controllers are stacked on the screen.
-    public var onlyScanUpperViewController = true
-
-    // Temporarily clear textfields and textviews to preview hint texts
-    public var autoClearTextFields = true
-
-    // By default embedded or child view controllers will not handled as an 'upper' view controller (like popup windows)
-    // Optionally you can register view controllers that should be handled as upper view controllers.
-   public var additionalUpperViewControllers: [String] = []
-
-    // What is the minimum part of the label that should be visible on the screen?
-    public var minimumOnscreenHorz = 0.8
-    public var minimumOnscreenVert = 0.8
-
-    // Clip the offscreen part of the label?
-    public var clipOffscreen = true
-    public var clipStyle: ClipBounds = .upperViewController
-
-    // Select the entire button instead of the label inside a UIButton
-    public var expandToButton = false
-
+    // Preview settings
+    
     // Add simulator border
     public var addDeviceBezels = true
 
+    // Location of the preview (topleft, center)
     public var previewPosition: DivPosition = .center
 
-    // Add borders around translatable texts
+    // Add borders around translatable texts in the previews
     public var addLabelBorders = false
     public var labelBorderColor = "#0a3679"
 
-    // Include the Apple system font (San Francisco) for use in Windows
-    public var includeAppleWebFonts = true
+    // Internal scanning and matching settings
+    public var useAccurateScanning = true
+    public var strokeColorTolerance = 0.1
+    public var strokeLineOffsets: [CGFloat] = [-0.4, -0.2, -0.1, 0, 0.1, 0.2, 0.4]
+    
+    // Alignment strategy (left, center, neighbours)
+    public var alignmentStrategy = AlignmentStrategy.left
+    public var alignmentMargin = 32
+    public var alignmentDifferenceTreshhold = 8
+    public var alignmentColorTolerance = 0.05
+    
 
 ```
 
@@ -255,38 +221,14 @@ The following configuration options are available:
 
 ## Rigi commandline tools
 
-The Rigi SDK comes shipped with several commandline tools to streamline the process of exporting and importing string files and uploading string files and previews to the Rigi server.
+The Rigi SDK comes shipped with a commandline tools for exporting and importing localization files and uploading string files and previews to the Rigi server.
 
 This section describes how to setup the Rigi commandline tools for your project. 
 
-### Install Bartycrouch (optional)
 
-Optionally you can use the tool [BartyCrouch](https://github.com/Flinesoft/BartyCrouch) to extract your all localised texts from Storyboards and Swift code and incrementally update the string files in your project.
+### Setup the Rigi commandline tool
 
-See: https://github.com/Flinesoft/BartyCrouch
-
-##### Bartycrouch installation:
-
-```bash
-brew install bartycrouch 
-```
-
-#### Bartycrouch initialisation:
-
-```bash
-bartycrouch init 
-```
-
-#### Update string files:
-
-```bash
-bartycrouch update 
-```
-
-<br/>
-
-### Setup the Rigi commandline tools
-
+The Rigi Commanline Tool 
 To setup the Rigi commandline tools you need to create a ***rigi.ini*** file in your project root folder. A template for the ini file is availlable in the Rigi Pods folder. You can copy the template to your project folder as follows:
 
 ```bash

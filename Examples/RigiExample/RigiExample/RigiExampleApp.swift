@@ -1,6 +1,9 @@
 
 import SwiftUI
+
+#if canImport(RigiSDK)
 import RigiSDK
+#endif
 
 @main
 struct RigiExampleApp: App {
@@ -8,7 +11,12 @@ struct RigiExampleApp: App {
         WindowGroup {
             ContentView()
                 .onAppear {
-                    Rigi.start()
+                    #if canImport(RigiSDK)
+                    Rigi.start { setttings in
+                        setttings.addLabelBorders = true
+                        setttings.labelBorderColor = "#ff0000"
+                    }
+                    #endif
                 }
         }
     }
