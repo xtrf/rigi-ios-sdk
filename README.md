@@ -33,8 +33,8 @@ This repository houses the Rigi iOS SDK framework and sample projects.
 - **Examples** - Example apps.
 
 Find out more about the Rigi Software Localization Tool on [https://xtm.cloud/rigi/]()
-
-<br />
+<br>
+<br>
 
 ##  Requirements
 
@@ -45,16 +45,18 @@ The minimum requirements for Rigi SDK for iOS are:
 - Xcode Swift Package Manager
 - Xcode Localization with String Catalogs
 - Rigi Swift Package and Rigi commandline script
-
-<br />
+<br>
+<br>
 
 ## Localize the project
 
-To make use of the Rigi SDK your need to enable localization in your Xcode project and add a special ***pseudo language***. The RigiSDK supports Xcode string catalogs and the import and export of XLIFF localization files.
+The Rigi SDK supports **Xcode string catalogs** and the import and export of **XLIFF localization files**.
 
-This section describes how to setup basic localization in your project.
+To make use of the Rigi SDK your need to enable localization in your Xcode project and add a special **pseudo language**.
 
-More information about Localization in Xcode can be found on [https://developer.apple.com/documentation/xcode/localization]()
+This section describes how to setup basic localization. More information about Localization in Xcode can be found on [https://developer.apple.com/documentation/xcode/localization]()
+<br>
+<br>
 
 ### Enable localization in Xcode
 
@@ -67,7 +69,7 @@ Add the languages your app will support to the Xcode project. In this example we
 ![](Docs/Screens/setup-3.png)
 
 
-You should also add a ***pseudo language*** that will only be used to capture screenshots and find translatable texts on the previews. 
+You should also add a ***pseudo language*** that will only be used while capturing previews. 
 
 Here we will choose Zulu (ZU) as a pseudo language. 
 
@@ -78,7 +80,7 @@ Here we will choose Zulu (ZU) as a pseudo language.
 
 ## Setup the Rigi SDK
 
-This section describes how to add the Rigi SDK to your Xcode project using ***Swift Package Manager*** and how to configure the project and the Rigi SDK. 
+This section describes how to add the Rigi SDK to your Xcode project using ***Swift Package Manager*** and how to configure the Rigi SDK in your project . 
 
 ### Create a new Target and Scheme for Rigi builds
 
@@ -91,6 +93,8 @@ Here we create an new target 'RigiExample Rigi' and set its language to Zulu (ZU
 ![](Docs/Screens/spm-1.png)
 
 ![](Docs/Screens/spm-2.png)
+
+<br>
 
 ### Add the Rigi SDK to Xcode
 
@@ -165,6 +169,8 @@ struct RigiExampleApp: App {
 
 ```
 
+<br>
+
 ### Configure the Rigi SDK
 
 For most project the Rigi SDK will work fine out of the box. For specific needs the SDK has several options that can be customised. This section will give an overview of these options.
@@ -224,190 +230,208 @@ The following configuration options are available:
 The Rigi SDK comes shipped with a commandline tools for exporting and importing localization files and uploading string files and previews to the Rigi server.
 
 This section describes how to setup the Rigi commandline tools for your project. 
+<br><br>
 
+### Download the Rigi commandline tool
 
-### Setup the Rigi commandline tool
+The Rigi Commanline Tool can be downloaded here: [https://github.com/xtrf/rigi-ios-sdk/blob/master/RigiSDK.zip]()
 
-The Rigi Commanline Tool 
-To setup the Rigi commandline tools you need to create a ***rigi.ini*** file in your project root folder. A template for the ini file is availlable in the Rigi Pods folder. You can copy the template to your project folder as follows:
+After downloading extract the RigiSDK.zip in your project root folder. The zip contains the following files:
+
+**/RigiSDK/rigi**
+
+- This the the **Rigi commanline tool**.
+
+**/RigiSDK/rigi.ini**
+
+- This is the **Rigi project configuration file.**
+
+**/RigiSDK/rigi.meta**
+
+- This file is an internal file used by the RigiSDK and will be updated ayutomatically.
+<br>
+<br> 
+ 
+### Add Rigi configuration files to Xcode
+
+After downloading you need add the **rigi.ini** and **rigi.meta** files to your Xcode project. Make sure to add them to the **pseudo target**.
+
+![](Docs/Screens/sdk-install-1.png)
+![](Docs/Screens/sdk-install-2.png)
+<br><br> 
+
+### Setup 'rigi.ini' configuration details
+
+Next edit the **rigi.ini** configuration details.
+<br> 
+
+***PROJECT_NAME***<br>
+
+ - The name of the project on the Rigi server.
+
+***RIGI_SERVER***<br>
+
+- The URL of the rigi server.
+
+***PROJECT_ID***<br>
+
+- Your project ID on the Rigi server. This ID can be found in the URL when you navigate the your project on the Rigi server.
+
+***RIGI_EMAIL*** and ***RIGI_PASSWORD***<br>
+
+- The credentials of a **technical user** on the Rigi server that has the rights to upload and download XLIFF files and previews to your project.
+
+<br> 
+
+![](Docs/Screens/rigi-ini.png)
 
 ```bash
-cd [PROJECT_FOLDER]
-mkdir Rigi
-cp Pods/Rigi/docs/rigi.ini Rigi
-```
 
-The ***rigi.ini*** file has several settings that can be customised. The ***PROJECT_NAME*** is required and should exactly match the project name on the Rigi server. See also the sesction how to setup the Rigi server.
-
-For most projects the other settings can be left default, however, they can customised if needed.
-
-```bash
-edit Rigi/rigi.ini
-
-# -----------------
+#------------------
 # Rigi SDK settings
 # -----------------
 
-# Rigi project name:
-# - Should match the project name on the Rigi server
+# Project name:
+PROJECT_NAME = "RigiExample"
 
-PROJECT_NAME="RIGI-PROJECT"
+# Server settings
+# - Rigi server url and project id
 
-# Folder where downloaded string files will be saved:
-# - If empty the default download folder will be used
+RIGI_SERVER = "https://rigi.io"
+PROJECT_ID = 123
 
-#DOWNLOAD_FOLDER=~/Downloads
+# Server credentials
+# - Credentials for Rigi server uploads and downloads
 
-# Simulator documents folder:
-# - If empty the last used simulator rigi folder will be used
+RIGI_EMAIL = "user@server.com"
+RIGI_PASSWORD = "secret"
 
-#SIMULATOR_DOCUMENTS=~/Library/Developer/CoreSimulator/Devices/B6D3A06C-8B50-43D8-B3EE-7469EF7312B7/data/Containers/Data/Application/BFDE44A9-AF81-4B29-8685-BD728F1CEBE3/Documents
+# Source language
+# - Should also be defined in the Xcode project
 
-# Xcode project folder:
-# - If empty the Rigi sdk will try to find the project folder.
+SOURCE_LANGUAGE = "en"
 
-#XCODE_PROJECT=~/Projects/Xcode/MY-PROJECT
+# Pseudo language
+# - Should also be defined in the Xcode project
+
+PSEUDO_LANGUAGE = "zu"
+
 ```
 
 <br/>
 
-## Setup the Rigi server
+### Rigi commanline tool
 
-If not already done you should create a new project on Rigi server and configure it for use with your Xcode project.
+The **Rigi commandline tool** can now be used to perform the following steps in the translation process. The following cammands are available:
 
+***upload-localization***    
+Upload localization files to the Rigi server. 
+      
+***download-localization***           
+Download translated localization files from the Rigi server.  
+      
+***upload-previews***                 
+Upload captured Simulator previews to the Rigi server.
+     
+<br> 
+![](Docs/Screens/rigi-cmd.png)
+<br><br>
 
-### Setup a new project on the Rigi server
+## Prepare the Pseudo language
 
-1. Create a new Rigi project. 
-2. Select your base Xcode language as the ***Source language***. In this example we use EN. 
-3. Select the the ***pseudo language*** that you added to the Xcode project. In this example we use Zulu.
-4. Add the ***tagret language***. In this example we use Dutch.
-5. Add a ***translation task*** for the target language.
-6. Add ***translators*** to the translation task.
+To making Rigi previews we need first neew to prepare the **psuedo language**. The following section describes how to export your localization files from Xcode, upload them to the Rigi server and install the prepared **psuedo language**.
 
-![](Docs/Assets/server-setup-1.png)
+### Export Localization catalog from Xcode
 
-![](Docs/Assets/server-setup-2.png)
+First **export** all the localization files from your Xcode project. 
 
-![](Docs/Assets/add-language-2.png)
+In this example we will save the exported **Localization Catalog** on the **Desktop**.<br><br>
 
-![](Docs/Assets/add-translation-2.png)
+![](Docs/Screens/setup-5.png)
 
-![](Docs/Assets/select-translator-2.png)
+![](Docs/Screens/setup-6.png)
 
-<br/>
+<br>
 
-## Add Rigi tokens
+### Upload Localization catalog to the Rigi server
 
-To make translatable previews we need to add **Rigi tokens** to the **psuedo language files**. The following section describes how to export your language files from Xcode, import them into the Rigi server and add required Rigi codes.
-
-### Zip all localisation files from Xcode project
-
-You can use a tool like Bartycrouch to extract all localizable texts from your Xcode project and export them to string files.
-
-Then you can use the following command to find and **all string files** in the Xcode project to prepare for uploading to the Rigi server.
-
-```bash
-cd [PROJECT_FOLDER]
-Pods/Rigi/bin/strings-collect.sh
-```
-<br/>
-
-### Upload the string files to the Rigi server
-
-Use the following command to open a finder window with the zipped string files that can be uploaded to the Rigi server.
+Next use the following command to uploaded to the exported localization catalog to the Rigi server.
 
 ```bash
  cd [PROJECT_FOLDER]
- Pods/Rigi/bin/strings-open.sh
+ ./RigiSDK/rigi upload-localization ~/Desktop/RigiExample\ Localizations
 ```
-From this folder the zipped string files can be uploaded to the Rigi server (using drag-and-drop)
 
-![](Docs/Assets/server-import-2.png)
+This will upload all localization files to the Rigi server. 
 
-![](Docs/Assets/server-import-4.png)
+Additionally all strings in the **psuedo language** will get extra surrounding psuedo markers: **[#** string **#]**. The updated psuedo language file will automatically be downloaded and saved in:
 
-![](Docs/Assets/server-import-5.png)
+**Desktop/Rigi-pseudo/**
+<br><br>
 
-![](Docs/Assets/server-import-6.png)
+### Import psuedo language in Xcode
 
-![](Docs/Assets/server-import-7.png)
+Finally we need to import the updated psuedo language file from the **'Desktop/Rigi-pseudo/'** folder back into the Xcode project.
+<br><br>
 
-Now the Rigi tokens will have been added to the ***pseudo language***. The updated language files should now be downloaded and installed in the Xcode project.
+![](Docs/Screens/import-localization-1.png)
 
-<br/>
+![](Docs/Screens/import-zu.png)
 
-### Download the (pseudo) string files from the Rigi server
 
-Next we can export the marked strings files (***pseudo language***) and import them in the Xcode project.
+Now your are ready make Rigi previews!
+<br><br>
 
-Export the string files from the server by clicking 'Download files'. You should select the **pseudo language**. Optionally you can also export any other langauge.
+## Make Rigi previews
 
-![](Docs/Assets/server-download.png)
-
-After dowloading use following command to install the string files into the Xcode project. This command will look for downloaded zip files in the default **Downloads** folder. This can be changed in the **rigi.ini** settings file. 
-
-```bash
-cd [PROJECT_FOLDER]
-Pods/Rigi/bin/strings-extract.sh
-```
-<br/>
-
-## Make previews
-
-With the Rigi tokens in place you can start to make previews of the translatable texts in the simulator and load the these previews to the Rigi server. This section describes how to do this. 
+With the Rigi SDK configured and the Localization prepared you can start to make previews of the translatable texts in the simulator and load the these previews to the Rigi server. This section describes how to do this. 
+<br>
 
 ### Make previews in the Simulator (manual)
 
-Run the Target or Scheme that runs the project in ***pseudo language***. In this example we use the **RigiExample Pseudo** scheme which automatically runs the app in the psuedo language (Zulu) and activates the Rigi SDK on startup.
+Run the Target or Scheme that runs the project in ***pseudo language*** mode. In this example we use the **RigiExample Rigi** scheme which automatically runs the app in the psuedo language (Zulu) and activates the Rigi SDK on startup. All translatable texts in the app will be surrounded by special pseudo markers **[#&nbsp;**string**&nbsp;#]**.
 
-Navigate through the app and capture previews of all screens that contain translatable texts.
+Navigate through the app and press the **capture button** to capture previews. The Rigi SDK will add highlighted borders around all transaltable texts that are found on the screen. 
 
-<img src="Docs/Assets/capture-1.png" width="300">
+- A **blue border** indicates that the text is found in the localization files. 
+- A **red border** indicates that the text is not found in the localization files. 
+<br><br>
 
-These previews will be saved into the Simulator data folder.
+<p align="center" width="100%">
+<img src="Docs/Screens/capture-1.png" width="400">
 
-<br/>
+<img src="Docs/Screens/capture-2.png" width="392">
+</p>
 
-### Collect the previews to upload
-
-You can use the following command to **open the previews in the Simulator folder**. 
-
-This command will try to find the latest saved Rigi preview in any Xcode Simulator folder. When this is not working for your project you can specify a specific Xcode Simulator folder in the **rigi.ini** settings file. 
-
-```bash
-cd [PROJECT_FOLDER]
-Pods/Rigi/bin/previews-peek.sh
-```
-
-<img src="Docs/Assets/preview-peek.png" width="700">
-
-When all previews are complete use the following command to **zip the previews** found in the Simulator folder.
-
-```bash
-cd [PROJECT_FOLDER]
-Pods/Rigi/bin/previews-collect.sh
-```
-<br/>
+The previews will be saved into the Simulator data folder.
+<br><br>
 
 ### Upload the previews to the Rigi server
 
-Use the following command to open a finder window with the **zipped previews** that can be uploaded.
+When you are done capturing screenshots, you can upload the previews to the Rigi server.
+
+Use the following command to upload.
 
 ```bash
 cd [PROJECT_FOLDER]
-Pods/Rigi/bin/previews-open.sh
+./RigiSDK/rigi upload-previews
 ```
-<img src="Docs/Assets/preview-open.png" width="700">
 
+This command will scan all Xcode Simulator folders and try to find the latest saved Rigi previews. 
 
-The previews can now be uploaded to the Rigi server. 
+When new previews are found the command will prompt to **inspect the previews** before uploading. Use the **MacOS Preview** tool to check the previews before uploading.
 
-Select the latest zipfile, then drag and drop it into the previews uploader.
+![](Docs/Screens/previews-1.png)
+![](Docs/Screens/previews-2.png)
+<br>
 
-![](Docs/Assets/upload-previews.png)
+Next the command will prompt to **upload** the previews to the server. Press **enter** to continue.
 
+![](Docs/Screens/upload.png)
 
+Now the texts on the Rigi server can be translated with previews!
+<br>
+<br>
 
 ## Translate with previews
 
@@ -415,41 +439,70 @@ With the previews uploaded to the Rigi server the translator can start translati
 
 ### Translate with preview context
 
-1. On the Rigi server select and open a translation task. 
-2. Select the text to translate. When a preview is available it will be shown next to the text. Changes to the text will be reflected in the preview. 
+1. On the Rigi server create a translation task and add a translator to the task. 
+2. Open the translation task. 
+3. Select the text to translate. When a preview is available it will be shown next to the text. 
+4. Changes the text will be reflected in the preview. Make sure to save your changes!
 
 Note: this is just a preview. The updated text might be rendered differently on your device after importing into Xcode.
 
-![](Docs/Assets/select-translator-0.png)
+![](Docs/Screens/translate-1.png)
+![](Docs/Screens/translate-2.png)
+![](Docs/Screens/translate-3.png)
+![](Docs/Screens/translate-4.png)
+<br><br>
 
-![](Docs/Assets/translate-3.png)
+## Import translations
+
+When the texts have been translated on the Rigi server they can be imported into the Xcode project. This section describes this process.
+
+
+### Download the translated texts from the Rigi server
+
+Use the Rigi commandline tool to download the translated texts as XLIFF files to your computer. By default there XLIFF localization files will be saved to the **Desktop/Rigi-translated** folder
+
+```bash
+cd [PROJECT_FOLDER]
+./RigiSDK/rigi download-previews
+```
+
+![](Docs/Screens/download-localization.png)
+<br>
+
+### Install the translated texts in Xcode
+
+After dowloading the XLIFF localization files you can **import** them into the Xcode project. You need to import each XLIFF file individually. 
+<br/>
+
+![](Docs/Screens/import-localization.png)
+![](Docs/Screens/import-localization-2.png)
+<br><br>
+
+### Check the translations in the Simulator
+
+After importing you can check the translated text in the Xcode.
+
+Use the **Xcode String Catalog inspector** to check the imported translations.
+
+![](Docs/Screens/translated-1.png)
+<br>
+
+Use the **Xcode Simulator** to view the texts in action in the app.
+
+<p align="center" width="100%">
+<img src="Docs/Screens/translated.png" width="400">
+</p>
+
+The translated texts are now visible in the project!
 
 
 ## Import translations
 
-When the texts have been translated on the Rigi server they can be imported into the Xcode project. This follows the same procedure as installing the Rigi tokens, described a few sections before.
 
-### Download the translated string files from the Rigi server
-
-Export the translated strings files and import them in the Xcode project.
-
-Export the string files from the server by clicking 'Download files'. You should at leased select the **target language**. Optionlally you can also export the **pseudo language**. This is required after new texts have been added to the project.
-
-![](Docs/Assets/download-translated.png)
-
-After dowloading the string files from the server use following command to install the files into the Xcode project. 
-This command will look for downloaded zip files in the default **Downloads** folder. This can be changed in the **rigi.ini** settings file. 
-
-```bash
-cd [PROJECT_FOLDER]
-Pods/Rigi/bin/strings-extract.sh
-```
-<br/>
-
-
+Prepare the Pseudo language
 ## License
 
-Copyright (c) 2022 Rigi.io
+Copyright (c) 2025 Rigi.io
 
 <br />
 
