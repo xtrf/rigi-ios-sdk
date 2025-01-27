@@ -34,7 +34,6 @@ This repository houses the Rigi iOS SDK framework and sample projects:
 
 Find out more about the Rigi Software Localization Tool on [https://xtm.cloud/rigi/]()
 
-<br/>
 
 ## Requirements
 
@@ -50,9 +49,9 @@ The minimum requirements for Rigi SDK for iOS are:
 
 ## Localize the project
 
-The Rigi SDK supports **Xcode string catalogs** and the import and export of **XLIFF localization files**.
-
 To make use of the Rigi SDK, you need to enable localization in your Xcode project and add a special **pseudo language**.
+
+The Rigi SDK supports **Xcode string catalogs** and the import and export of **XLIFF localization files**.
 
 This section describes how to set up basic localization. More information about Localization in Xcode can be found on [https://developer.apple.com/documentation/xcode/localization]()
 
@@ -213,7 +212,7 @@ public var alignmentColorTolerance = 0.05
 
 ## Rigi command-line tools
 
-The Rigi SDK comes shipped with command-line tools for exporting and importing localization files and uploading string files and previews to the Rigi server.
+The Rigi SDK comes shipped with command-line tools for exporting and importing localization files and uploading these files and previews to the Rigi server.
 
 This section describes how to set up the Rigi command-line tools for your project.
 
@@ -370,12 +369,13 @@ With the Rigi SDK configured and the Localization prepared, you can start to mak
 
 ### Make previews in the Simulator (manual)
 
-Run the Target or Scheme that runs the project in ***pseudo language*** mode. In this example, we use the **RigiExample Rigi** scheme which automatically runs the app in the pseudo language (Zulu) and activates the Rigi SDK on startup. All translatable texts in the app will be surrounded by special pseudo markers **[#** string **#]**.
+Run the app in the Xcode Simulator using the ***pseudo language*** scheme. In this example, we use the **RigiExample Rigi** scheme which automatically selectes the pseudo language (Zulu) and activates the Rigi SDK on startup. All translatable texts in the app should now be surrounded by the special pseudo markers **[#** string **#]**.
 
 Navigate through the app and press the **capture button** to capture previews. The Rigi SDK will add highlighted borders around all translatable texts that are found on the screen.
 
 - A **blue border** indicates that the text is found in the localization files
 - A **red border** indicates that the text is not found in the localization files
+<br>
 
 <p align="center" width="100%">
 <img src="Docs/Screens/capture-1.png" width="400">
@@ -423,7 +423,8 @@ With the previews uploaded to the Rigi server, the translator can start translat
 3. Select the text to translate. When a preview is available, it will be shown next to the text
 4. The changes will be reflected in the preview. Make sure to save your changes!
 
-Note: This is just a preview. The updated text might be rendered differently on your device after importing into Xcode.
+Note:<br>
+The rendered texts in the previews are just an indication. These texts might be rendered differently on your device after importing into Xcode.
 
 ![](Docs/Screens/translate-1.png)
 ![](Docs/Screens/translate-2.png)
@@ -457,26 +458,26 @@ After downloading the XLIFF localization files, you can **import** them into the
 ![](Docs/Screens/import-localization-2.png)
 
 <br>
+
 ### Check the translations in the Simulator
 
 After importing, you can check the translated text in Xcode.
 
-Use the **Xcode String Catalog inspector** to check the imported translations.
+Use the **Xcode String Catalog view** to check the imported translations for each language and their translation state.
 
 ![](Docs/Screens/translated-1.png)
 <br>
 
-Use the **Xcode Simulator** to view the texts in action in the app.
+Next use the **Xcode Simulator** to view the translations in the running app.
 
 <p align="center" width="100%">
 <img src="Docs/Screens/translated.png" width="400">
 </p>
 
-The translated texts are now visible in the project!
 
 ## Add new strings
 
-After adding new strings to your Xcode project, make sure to export and upload them to the Rigi server. 
+After adding new strings to your Xcode project, also make sure to export and upload them to the Rigi server. 
 
 Then import the updated **pseudo language** file back into the project before captuting new previews. 
 
