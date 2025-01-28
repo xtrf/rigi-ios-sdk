@@ -278,13 +278,13 @@ PROJECT_NAME = "RigiExample"
 # Server settings
 # - Rigi server url and project id
 
-RIGI_SERVER = "https://rigi.io"
+RIGI_SERVER = "https://xyz.rigi.io"
 PROJECT_ID = 123
 
 # Server credentials
 # - Credentials for Rigi server uploads and downloads
 
-RIGI_EMAIL = "user@server.com"
+RIGI_EMAIL = "user@acme.com"
 RIGI_PASSWORD = "secret"
 
 # Source language
@@ -363,11 +363,11 @@ Now you are ready to make Rigi previews!
 
 <br/>
 
-## Make previews
+## Capture previews
 
-With the Rigi SDK configured and the Localization prepared, you can start to make previews of the translatable texts in the simulator and load these previews to the Rigi server. This section describes how to do this.
+With the Rigi SDK configured and the Localization prepared, you can start capturing previews of the screens with translatable texts in the simulator and upload these previews to the Rigi server. This section describes how to do this.
 
-### Make previews in the Simulator (manual)
+### Capture previews in the Simulator (manual)
 
 Run the app in the Xcode Simulator using the ***pseudo language*** scheme. In this example, we use the **RigiExample Rigi** scheme which automatically selectes the pseudo language (Zulu) and activates the Rigi SDK on startup. All translatable texts in the app should now be surrounded by the special pseudo markers **[#** string **#]**.
 
@@ -433,9 +433,9 @@ The rendered texts in the previews are just an indication. These texts might be 
 
 <br/>
 
-## Import translations
+## Download translations
 
-When the texts have been translated on the Rigi server, they can be imported into the Xcode project. This section describes this process.
+When the texts have been translated on the Rigi server, they can be downloaded and imported into the Xcode project. This section describes this process.
 
 ### Download the translated texts from the Rigi server
 
@@ -450,7 +450,7 @@ cd [PROJECT_FOLDER]
 
 <br>
 
-### Install the translated texts in Xcode
+### Import the translated texts in Xcode
 
 After downloading the XLIFF localization files, you can **import** them into the Xcode project. You need to import each XLIFF file individually.
 
@@ -488,7 +488,7 @@ Follow the steps starting at:
 
 ## License
 
-Copyright (c) 2025 Rigi.io
+Copyright (c) 2025 Rigi.io powered by XTM.	
 
 Use of the Rigi SDK for iOS is allowed in combination with a paid Rigi Cloud subscription.
 
