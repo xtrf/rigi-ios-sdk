@@ -218,9 +218,9 @@ This section describes how to set up the Rigi command-line tools for your projec
 
 ### Download the Rigi command-line tool
 
-The Rigi Command-line Tool can be downloaded here: [https://github.com/xtrf/rigi-ios-sdk/blob/master/RigiSDK.zip]()
+To install the Rigi command-line tool and example rigi.ini file, download the [RigiSDK-Installer](https://github.com/xtrf/rigi-ios-sdk/raw/refs/heads/master/Rigi-Installer.dmg) from this repository. After downloading, double click the installer and drag-and-drop the RigiSDK folder into your project root folder. 
 
-After downloading, extract the RigiSDK.zip in your project root folder. The zip contains the following files:
+The RigiSDK folder contains the following files:
 
 **/RigiSDK/rigi**
 
