@@ -242,6 +242,7 @@ After downloading, you need to add the **rigi.ini** and **rigi.meta** files to y
 
 ![](Docs/Screens/sdk-install-1.png)
 ![](Docs/Screens/sdk-install-2.png)
+![](Docs/Screens/sdk-install-2-b.png)
 
 <br/>
 
